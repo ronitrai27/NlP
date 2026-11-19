@@ -49,10 +49,9 @@ export default function HomePage() {
       >
         <HeroVideo />
 
-        {/* legibility washes: top (navbar), centre (copy), bottom (blend into the page) */}
-        <div className="pointer-events-none absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-white/80 to-transparent" />
-        <div className="pointer-events-none absolute inset-0 bg-white/25" />
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-white to-transparent" />
+        {/* Video stays crisp; only the bottom edge gets a blurred white fade into the page */}
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-64 backdrop-blur-xl [mask-image:linear-gradient(to_top,black_35%,transparent)]" />
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-64 bg-gradient-to-t from-white via-white/70 to-transparent" />
 
         {/* Brand (the global navbar is hidden on this page) */}
         <div className="absolute left-0 top-0 z-10 flex items-center gap-2.5 px-4 py-5 sm:px-6 lg:px-8 2xl:px-12">
@@ -76,7 +75,7 @@ export default function HomePage() {
             Turn noisy product reviews into verified intelligence
           </h1>
 
-          <p className="mx-auto mt-6 max-w-2xl text-pretty text-base leading-relaxed text-neutral-700 sm:text-lg">
+          <p className="mx-auto mt-6 max-w-2xl text-pretty text-base font-medium leading-relaxed text-neutral-900 [text-shadow:0_0_18px_rgba(255,255,255,0.95),0_0_6px_rgba(255,255,255,0.7)] sm:text-lg">
             Filter coordinated spam campaigns, cluster multilingual feedback
             across languages, and generate grounded pros, cons, and theme
             breakdowns traced directly to real customer quotes.
@@ -115,7 +114,7 @@ export default function HomePage() {
             )}
 
             <div className="mt-5 flex flex-wrap items-center justify-center gap-2 text-sm">
-              <span className="text-neutral-700">Popular searches:</span>
+              <span className="font-medium text-neutral-800">Popular searches:</span>
               {SAMPLE_QUERIES.map((sample) => (
                 <button
                   key={sample}
@@ -123,7 +122,7 @@ export default function HomePage() {
                   onClick={() =>
                     router.push(`/search?q=${encodeURIComponent(sample)}`)
                   }
-                  className="cursor-pointer rounded-full bg-white/60 px-3.5 py-1.5 font-medium text-neutral-800 backdrop-blur hover:bg-white"
+                  className="cursor-pointer rounded-full bg-white/75 px-3.5 shadow-sm py-1.5 font-medium text-neutral-800 backdrop-blur hover:bg-white"
                 >
                   {sample}
                 </button>

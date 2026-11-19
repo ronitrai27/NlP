@@ -16,6 +16,18 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-inter), "Inter", sans-serif;
   --font-mono: var(--font-inter), "Inter", sans-serif;
+
+  /* Sage palette sampled from the hero video's misty hills */
+  --color-sage-50: #f4f7f2;
+  --color-sage-100: #e6ede1;
+  --color-sage-200: #cfdcc5;
+  --color-sage-300: #b0c4a1;
+  --color-sage-400: #8ea67c;
+  --color-sage-500: #6d8a5c;
+  --color-sage-600: #566f48;
+  --color-sage-700: #44583a;
+  --color-sage-800: #364630;
+  --color-sage-900: #263222;
 }
 
 html,
@@ -50,4 +62,27 @@ svg text {
 
 .animate-toast-in {
   animation: toast-slide-in 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Feature slider: progress line fill + staggered mockup entrance */
+@keyframes feature-progress {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+.animate-feature-progress {
+  transform-origin: left center;
+  animation: feature-progress linear forwards;
+}
+
+@keyframes rise-in {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-rise-in {
+  opacity: 0;
+  animation: rise-in 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-rise-in { animation: none; opacity: 1; }
 }

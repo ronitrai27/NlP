@@ -24,8 +24,8 @@ function NavbarDynamicContent() {
           href="/"
           className={`rounded-md px-3 py-1.5 text-sm font-medium transition-colors ${
             pathname === "/"
-              ? "bg-blue-50 text-blue-700"
-              : "text-neutral-600 hover:bg-neutral-200 hover:text-neutral-900"
+              ? "bg-neutral-900 text-white"
+              : "text-neutral-600 hover:bg-neutral-100 hover:text-neutral-900"
           }`}
         >
           Search
@@ -34,8 +34,8 @@ function NavbarDynamicContent() {
           href="/features"
           className={`rounded-md px-3 py-1.5 text-sm font-medium transition-colors ${
             pathname === "/features"
-              ? "bg-blue-50 text-blue-700"
-              : "text-neutral-600 hover:bg-neutral-200 hover:text-neutral-900"
+              ? "bg-neutral-900 text-white"
+              : "text-neutral-600 hover:bg-neutral-100 hover:text-neutral-900"
           }`}
         >
           Features
@@ -44,8 +44,8 @@ function NavbarDynamicContent() {
           href="/product/demo"
           className={`inline-flex items-center gap-1.5 rounded-md px-3 py-1.5 text-sm font-medium transition-colors ${
             pathname === "/product/demo"
-              ? "bg-blue-50 text-blue-700"
-              : "text-neutral-600 hover:bg-neutral-200 hover:text-neutral-900"
+              ? "bg-neutral-900 text-white"
+              : "text-neutral-600 hover:bg-neutral-100 hover:text-neutral-900"
           }`}
         >
           <Play className="h-3.5 w-3.5" />
@@ -55,8 +55,8 @@ function NavbarDynamicContent() {
           href="/evaluation"
           className={`inline-flex items-center gap-1.5 rounded-md px-3 py-1.5 text-sm font-medium transition-colors ${
             pathname === "/evaluation"
-              ? "bg-blue-50 text-blue-700"
-              : "text-neutral-600 hover:bg-neutral-200 hover:text-neutral-900"
+              ? "bg-neutral-900 text-white"
+              : "text-neutral-600 hover:bg-neutral-100 hover:text-neutral-900"
           }`}
         >
           <BarChart3 className="h-3.5 w-3.5" />
@@ -75,7 +75,7 @@ function NavbarDynamicContent() {
                 onChange={(e) => setQuery(e.target.value)}
                 placeholder="Search products..."
                 aria-label="Quick product search"
-                className="h-9 w-56 rounded-md border border-neutral-300 bg-neutral-100 pl-9 pr-3 text-sm text-neutral-900 placeholder:text-neutral-400 transition-colors focus:border-blue-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500/20 lg:w-64"
+                className="h-9 w-56 rounded-md border border-neutral-300 bg-neutral-100 pl-9 pr-3 text-sm text-neutral-900 placeholder:text-neutral-400 transition-colors focus:border-neutral-400 focus:bg-white focus:outline-none focus:ring-2 focus:ring-neutral-900/10 lg:w-64"
               />
             </div>
           </form>
@@ -100,10 +100,10 @@ function NavbarDynamicContent() {
 
 function NavbarShell() {
   return (
-    <header className="sticky top-0 z-40 border-b border-neutral-300 bg-white backdrop-blur supports-[backdrop-filter]:bg-white">
+    <header className="sticky top-0 z-40 border-b border-neutral-200 bg-white/80 backdrop-blur-md">
       <div className="flex h-16 w-full items-center gap-6 px-4 sm:px-6 lg:px-8 2xl:px-12">
         <Link href="/" className="flex items-center gap-2.5 group shrink-0">
-          <span className="flex h-9 w-9 items-center justify-center rounded-md bg-gradient-to-br from-blue-600 to-blue-800 text-white shadow-sm ">
+          <span className="flex h-9 w-9 items-center justify-center rounded-md bg-neutral-900 text-white shadow-sm ">
             <ShieldCheck className="h-5 w-5" />
           </span>
           <div className="flex flex-col">
